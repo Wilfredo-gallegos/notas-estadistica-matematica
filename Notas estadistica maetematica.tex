@@ -1,0 +1,207 @@
+\documentclass[12pt,letterpaper]{article}
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[spanish]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb,tikz}
+\usepackage{amsfonts}
+\usepackage{wrapfig}
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corolario}[theorem]
+\newtheorem{lemma}{Lema}[section]
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{upgreek}
+\usepackage{float}
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\usepackage{xcolor}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Estadística matemática}
+\author{Wilfredo Gallegos}
+
+\begin{document}
+\maketitle
+
+\textbf{Jueves 6 de julio}
+\section{Contenido}
+\section*{5.1}
+\begin{definition}
+	Sean $Y_1$ y $Y_2$ variables aleatorias discretas. La función de probabilidad conjunta para $Y_1$ y $Y_2$ es P$(y_1,y_2)=P(Y_1=y_1)$ $-\inf < y2<\inf$)
+\end{definition}
+
+\newpage
+\textbf{martes 11 de julio}
+
+\begin{definition}
+	Si $Y_1$ y $Y_2$ son variables aleatorias discretas conjuntas con funcion de probabilidad conjunta $P(y_1,y_2)(P[Y_1=y_1]\cap [Y_2=y_2])$ y función marginal $P_1(y_1)(P[Y_1=y_1])$ y $P_2(y_2)(P[Y_2=y_2])$
+
+\[\Rightarrow p(y_1|y_2) = P([Y_1=y_1]|[Y_1=y_1])=\frac{P([Y_1=y_1]\cap [Y_2=y_2])}{P([Y_2=y_2]}=\frac{P(y_1,y_2)}{P_2(y_2)},\ \ \ \textit{Siempre que } P_2(y_2)>0\]
+\end{definition}
+
+\textbf{Nota: } 
+\[p(y_2|y_1)=\frac{P(y_1,y_2)}{P_1(y_1)}\geq 0\ y\ \sum p(y_1|y_1)=1\]
+
+\textbf{5.7 ej. 5.5}
+
+Encontrar la distrubución condicional de $Y_1$ dado $Y_2=1$
+\[
+\begin{array}{rl}
+	Y_1:& \textit{\# de republicanos en el comite de 2 personas}\\
+	Y_2:& \textit{\# de demócratas en el comite de 2 personas}\\
+	p(Y_2=0|Y_2=1)=&\frac{{3 \choose 0}{2 \choose 1}{1 \choose 1}}{{6 \choose 2}}\left/\frac{{2 \choose 1}{4 \choose 1}}{{6 \choose 2}}\right.=\frac{2/15}{8/15}=\frac{1}{4}\\
+	p(Y_2=1|Y_2=1)=&\frac{{3 \choose 1}{2 \choose 1}{1 \choose 0}}{{6 \choose 2}}\left/\frac{{2 \choose 1}{4 \choose 1}}{{6 \choose 2}}\right.=\frac{6/15}{8/15}=\frac{3}{4}
+\end{array}
+\]
+\textbf{5.6}
+\begin{definition}
+	Si $Y_1$ y $Y_2$ son variales aleatorias continuas con función densidad conjunta $f(y_1,y_2)\Rightarrow $ la función de distribución acumulada condicional de $Y_1$, dado $Y_2=y_2$ es $F(y_1|y_2)=P(Y_1\leq y_1|Y_2=y_2)$
+\end{definition}
+\textbf{5.7}
+\begin{definition}
+	Sean $Y_1$ y $Y_2$ son variales aleatorias contunuas con funsion densidad conjunta $f(y_1,y_2)$ y densidades marginales $f_1(y_1)$ y $f_2(y_2)$. Para cualquier $y_2$ tal que $f_2(y_2)>0$, la densidad condiciona de $Y_1$, dado $Y_1=Y_2$ es 
+	\[f(y_1|y_2)=\frac{f(y_1,y_2)}{f_2(y_2)}\]
+y para cualquier $y_1\ni f_1(y_1)>0$, la densidad condicional de $Y_2$ dada $Y_1=y_1$ es 
+\[f(y_2|y_1)=\frac{f(y_1,y_2)}{f_1(y_1)}\]
+\end{definition}
+\textbf{5.8 ej.}
+\[
+\begin{array}{rl}
+	Y_2:& \textit{existencia de bebidas al inicio de un dia determinado}\\
+	Y_1:& \textit{despacho durante el dia}\\
+	& Y_1\leq Y_2\\
+	f(y_1,y_2)=& \left\{
+	\begin{array}{rl}
+		1/2,&\ 0\leq y_1\leq y_2 \leq 2\\
+		0,&\ \textit{en caso contrario}
+	\end{array}
+	\right.
+\end{array}
+\]
+Encontrar la densidad condicional de $Y_1$ dad o$Y_2=y_2$ y calcular la probabilidad de que se venda menos o igual a 1/2 galón, dado que la maquina contiene 1.5 galones al empezar el dia.
+
+\textbf{Sol: }
+
+\[f_2(y_2)=\left\{
+\begin{array}{ccr}
+	\int^{\infty}_{-\infty} f(y_1,y_2)dy_1=\int^{y_2}_0\frac{1}{2}dy_1=\left.\frac{1}{2}y_1\right|^{y_2}_0=\frac{1}{2}y_2&,& 0\leq y_2\leq 2\\
+	0&,& \textit{Cualquier otro caso}
+\end{array}
+\right.
+\]
+\begin{center}
+\includegraphics[scale=.1]{../imagenes/imagen 1.jpeg} 
+\end{center}
+%------------------------------------------
+
+
+Note que $f_2(y_2)>0$ en $0<y_1\leq 2$
+
+$f(y_1|y_2)=\frac{f(y_1,y_2)}{f_2(y_2)}\frac{1/2}{1/2y_2}=\frac{1}{y_2}, 0<y_1\leq y_2 \leq 2$
+
+Además, $f(y_1|y_2)$ es indefinida si $y_2\leq0$ 0 $y_2>2$
+
+\textbf{5.8 ej.}
+
+\[
+\begin{array}{rl}
+	P(Y_1\leq 1/2|Y_2 =1.5)=& \int^{1/2}_{-\infty} f(y_1|y_2=1.5)dy_1\\
+	=& \int^{1/2}_{-\infty}\frac{1}{1.5}dy_1=\left.\frac{1}{1.5}y1\right|^{1/2}_0=\frac{1/2}{1.5}=\frac{1}{3}
+\end{array}
+\]
+\[P(X\in A,Y\in B)=P(X\in A)P(Y\in B)\]
+\textbf{5.7 Varaibles aleatorias independientes}
+
+\textbf{5.8}
+\begin{definition}
+	Sean $Y_1$ con una función distribución acumulada $F_1(y_1)$ y $Y_2$ con función de distribución acumulada $F_1(y_1)$ y $F(y_1,y_2)$ es la función de distribución acumulada conjunta de $Y_1$ y $Y_2$, entonces $Y_1$ y $Y_2$ son independientes ssi $F(y_1,y_2)$=$F_1(y_1)F_2(y_2) \forall (y_1,y_2)\in \mathbb{R}^2$
+Si $Y_1$ y $Y_2$ no son independientes son dependientes
+\end{definition}
+
+\begin{theorem}
+	Dado una variable aleatoria $X\Rightarrow P([X=a])=\lim\limits_{n\to 0} P([a-n<x\leq a])$
+\end{theorem}
+\begin{proof}
+	Sea $a\in\mathbb{R}$\\
+	Como $\lim\limits_{n\to 0} a-n=a\left( \lim\limits_{n\to \infty} a-\frac{1}{h}\right)=a$
+	\begin{center}
+\includegraphics[scale=.5]{../imagenes/imagen 2.jpeg.jpg} 
+\end{center}
+Tomese una sucesión
+\[\underset{a-1}{t_1}<\underset{a-\frac{1}{2}}{t_2}<...<\underset{a-\frac{1}{n}}{t_n}<a\]
+tal que $\lim\limits_{n\to \infty}t_n=0$ y $A_n=[t_n<t\leq a]$
+\[
+\begin{array}{rl}
+	A_1=& [a-1<t\leq a]\\
+	A_2=& [a-1/2<t\leq a], A_2\subseteq A_1\\
+	.\\
+	.\\
+	.\\
+	A_n=& [a-1/n<t\leq a], A_n\subseteq A_{n-1}
+	
+\end{array}
+\]
+Luego
+\[
+\begin{array}{rl}
+	\lim\limits_{n\to 0} P([a-n<x\leq a])=& \lim\limits_{n\to \infty} P([t_n<x\leq a])\\
+	=& \lim\limits_{n\to \infty} P([x\leq a])- P([x\leq t_n])=P([x\leq a])-\underbrace{\lim\limits_{n\to \infty} P([X\leq t_n])}_{P([X < a])}\\
+	=& P([X\leq a])-P([X < a])= P([X=a])
+\end{array}
+\]
+\end{proof}
+Por otro lado:
+\[
+\begin{array}{rl}
+	C_1=& [x\leq t_1]\\
+	C_2=& [x\leq t_2], C_1\subseteq C_2\\
+	.\\
+	.\\
+	.\\
+	C_n=& [x\leq t_n], C_{n-1}\subseteq C_n\\
+	\\
+	\lim\limits_{n\to \infty} [x\leq t_n]=& \bigcup^{\infty}_{i=1}[x\leq t_i]=[x<a]
+\end{array}
+\]
+Luego
+\[
+\begin{array}{rl}
+	B_1=& [x\leq t_1]\\
+	B_2=& [x\leq t_2]\smallsetminus [x\leq t_1]\\
+	.\\
+	.\\
+	.\\
+	B_n=& [x\leq t_n]\smallsetminus [x\leq t_{n-1}]
+\end{array}
+\]
+Notese que $B_i\cap B_j=\emptyset$ para $i\neq j$ y $\cup^n_{i=1}B_i=\cup^n_{i=1}[x\leq t_{i-1}]$\\*
+entonces 
+\[
+\begin{array}{rl}
+	P\left(\cup^{n}_{i=1}B_i\right)=&\sum^{n}_{i=1}P(B_i)\\
+	\lim\limits_{n\to \infty} \sum^{n}_{i=1}P(B_i)=& \lim\limits_{n\to \infty}\sum^{n}_{i=2}P([x\leq t_i]\smallsetminus [x\leq t_{i-1}])+P([x\leq t_i])\\
+	=& \sum^{n}_{i=2}\left[P([x\leq t_i])-P([x\leq t_{i-1}])\right]+P([x\leq t_i])\\
+	=& \lim\limits_{n\to \infty} P([x\leq t_n])
+\end{array}
+\]
+
+\begin{theorem}
+	\begin{enumerate}[a)]
+		\item Si $Y_1$ y $Y_2$ son variables aleatorias discretas con función de probabilidad conjunta $P[y_1,y_2]$ y funciones marginales $P_1(y_1)$ y $P_2(y_2)$, entonces $Y_1$ y $Y_2$ son independientes ssi $P(y_1,y_2)=P_1(y_1)P_2(y_2),\forall y_1,y_2\in \mathbb{R}$
+		\item Si $Y_1$ y $Y_2$ son variables aleatorias continuas con función densidad conjunta $f(y_1,y_2)$ y funciones densidades marginales $P_1(y_1)$ y $P_2(y_2)$, entonces $Y_1$ y $Y_2$ son independientes ssi $f(y_1,y_2)=f(y_1)f(y_2),\forall y_1,y_2\in \mathbb{R}$
+	\end{enumerate}
+\end{theorem}
+\end{document}
+
+
