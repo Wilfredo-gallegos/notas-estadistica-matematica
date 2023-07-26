@@ -8,7 +8,7 @@
 \usepackage[letterpaper,top=2cm,bottom=2cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
 
 % Useful packages
-
+\usepackage{mathtools} 
 \usepackage{verbatim}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -203,6 +203,127 @@ entonces
 		\item Si $Y_1$ y $Y_2$ son variables aleatorias continuas con función densidad conjunta $f(y_1,y_2)$ y funciones densidades marginales $P_1(y_1)$ y $P_2(y_2)$, entonces $Y_1$ y $Y_2$ son independientes ssi $f(y_1,y_2)=f(y_1)f(y_2),\forall y_1,y_2\in \mathbb{R}$
 	\end{enumerate}
 \end{theorem}
+\newpage
+\textbf{martes 18 de julio}
+
+\textbf{\textcolor{red}{Ej.}}
+
+Sea X y Y variables aleatorias contincuas con funci'on densidad 
+\[
+f(x,y)=
+\begin{cases}
+	6e^{-2x}e^{-3y},& 0<x,y<\infty \\
+	0,& \mathrm{\textit{En cualquier otro caso}}
+\end{cases}\]
+¿X y Y son variables aleatorias independientes?
+\[I(x,y)=\left\{
+\begin{array}{rl}
+	1,& 0<x,y<\infty\\
+	0, & \textit{en cualquier otro caso}
+\end{array}\right.\]
+\[I(x)=\left\{
+\begin{array}{rl}
+	1,& 0<x<\infty\\
+	0, & \textit{en cualquier otro caso}
+\end{array}\right.\]
+\[
+\begin{array}{rl}
+	f(x,y)=&6e^{-2x}e^{-3y}\cdot I(x,y)=(2e^{-2x}\cdot I(x))\cdot (3e^{-3y}\cdot I(y))=\\
+	\\
+	=&f_x(x)f_y(y),\ \forall x,y\in \mathbb{R}
+\end{array}
+\]
+Por el teorema 5.8, X y Y son variables aleatorias independientes.
+
+\textbf{\textcolor{red}{Ej.}}
+
+Sea X y Y variables aleatorias con funci'on densidad
+\[f(x,y)=\left\{
+\begin{array}{rl}
+	24xy,& 0<x,y<1; 0<x+y<1\\
+	0, & \textit{en cualquier otro caso}
+\end{array}\right.\]
+\begin{center}
+	\includegraphics[scale=.1]{../imagenes/imagen 3.jpeg} 
+\end{center}
+Claramente no se puede factorizar en 2 partes que de x y otro que depende de y. Por lo tanto, X y Y son variables aleatorias dependientes.
+
+\textbf{5.9 Teorema}
+
+Sean $Y_1$ y $Y_2$ variables aleatorias independientes y sean $g(Y_1)$ y $h(Y_2)$ funciones solo de $Y_1$ y $Y_2$. Entonces $E(g(Y_1)\cdot h(Y_2))=E(g(Y_1))\cdot E(h(Y_2))$ siempre que existan los valores esperados.
+
+\textbf{\textcolor{red}{Ej.}}
+
+En el ej. 5.19
+\[
+\begin{array}{rl}
+	Y_2:& \textit{Proporci'on de impurezas en la muestra}\\
+	Y_1:& \textit{dProporci'on de impurezas de tipo I entre todas las impurezas encontradas}\\
+\end{array}
+\]
+\[f(y_1,y_2)=\left\{
+\begin{array}{rl}
+	2(1-y_1),0<y_1,y_2<1&\\
+	0, & \textit{en cualquier otro caso}
+\end{array}\right.\]
+Encontrar $E(y_1,y_2)=E(y_1)\cdot E(y_2)$ si $Y_1$ y $Y_2$ son independientes.
+\[
+\begin{array}{rlr}
+	E(y_1,y_2)=& \int^1_0 \int^1_0 \underbrace{y_1\cdot y_2}_{funciones}\cdot \underbrace{2(1-y_1)}_{\parbox{3.5em}{\footnotesize densidad conjunta}}dy_2dy_1 \\ \\
+	=& 2\int^1_0y_1(1-y_1)\left.\frac{y_2^2}{2}\right|^1_0dy_1\\ \\
+	=& 2\int^1_0y_1(1-y_1)\left(\frac{1}{2}\right)dy_1\\ \\
+	=& 2\int^1_0 \frac{y_1}{2}-\frac{y_1^2}{2}dy_1=\left.\left[\frac{y_1^2}{4}-\frac{y_1^2}{6}\right]\cdot 2\right|^1_0=\\ \\
+	=& 2\left(\frac{1}{4}-\frac{1}{6}\right)=\frac{1}{6}
+\end{array}
+\]
+\par\noindent\rule{\textwidth}{0.5pt}
+\textbf{Marginales}
+\[f(y_1)=\left\{
+\begin{array}{rl}
+	\int^1_0 2(1-y_1)dy_2=2(1-y_1),&0\leq y_1 \leq 1\\
+	0, & \textit{en cualquier otro caso}
+\end{array}\right.\]
+\[f(y?2)=\left\{
+\begin{array}{rl}
+	\int^1_0 2(1-y_1)dy_1=\left.\vphantom{\frac{0}{0}} 2y_1-y_1^2\right|^1_0=1,& 0\leq y_2\leq 1\\
+	0, & \textit{en cualquier otro caso}
+\end{array}\right.\]
+\textbf{Valores ESperados}
+
+\[
+\begin{array}{rl}
+	E(Y_1)=&\int^1_0y_1 (2)(1-y_1)dy_1=\int^1_0 2y_1-2y_1^2dy_1=y_!^2-\left.\frac{2}{3}y_1^3\right|^1_0=1-\frac{2}{3}=\frac{1}{3}\\
+	E(Y_2)=& \int^1_0 y_2(1)dy_2=\left.\frac{y_2^2}{2}\right|^1_0=\frac{1}{2}
+\end{array}
+\]
+\section*{Valores esperados y varianzas de funciones lineales de variables aleatorias}
+
+\textbf{5.8) Teorema:} Sean $Y_1,..,Y_n$ y $X_1,...,X_n$ variables aleatorias con $E(Y_i)-\mu_i$ y $E(X_j)=\xi_j$. Se define $U_1=\sum\limits^{n}_{i=1}a_iY_i$ y $U_2=\sum\limits^{m}_{j=1}b_jX_j$ para $a_1,..,a_n,b_1,..,b_m\in\mathbb{R}$. Entonces, 
+
+\begin{enumerate}
+	\item $E(U)=\sum\limits^{n}_{i=1} a_iE(Y_i)$
+	\item $Var(U_1)=\sum\limits^{n}_{i=1} a_i^2 Var(Y_i)+2\sum\limits^{n}_{1\leq i\leq j \leq n}a_ia_j Cov(Y_iY_j)$
+	\begin{itemize}
+		\item $Cov(X,Y)=E(x,y)-(E(x))(E(y))$
+	\end{itemize}
+	\item
+	\begin{enumerate}
+		\item $Cov(U_1,U_2)= \sum\limits^{n}_{i=1}\sum\limits^{m}_{j=1}a_ia_jCov(Y_iX_j)$
+		\item $Cov(X,Y)=(E(x-E(x)))(E(y-E(y)))$
+	\end{enumerate}	 
+\end{enumerate}
+\begin{proof}
+	\begin{enumerate}
+		\item 
+		\[
+		\begin{array}{rl}
+			E(U_1)= &E(\sum^n_i  a_iY_i)=\sum^n_iE(a_iY_i)=(\mathrm{\textit{Por teorema 5.8}})=\\ \\
+			&\sum^n_i a_i E(Y_i)
+		\end{array}
+		\]
+	\end{enumerate}
+\end{proof}
+
 \end{document}
 
 
