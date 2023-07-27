@@ -313,12 +313,32 @@ Encontrar $E(y_1,y_2)=E(y_1)\cdot E(y_2)$ si $Y_1$ y $Y_2$ son independientes.
 	\end{enumerate}	 
 \end{enumerate}
 \begin{proof}
+\hfill
 	\begin{enumerate}
 		\item 
 		\[
 		\begin{array}{rl}
 			E(U_1)= &E(\sum^n_i  a_iY_i)=\sum^n_iE(a_iY_i)=(\mathrm{\textit{Por teorema 5.8}})=\\ \\
-			&\sum^n_i a_i E(Y_i)
+			&\sum^n_i a_i E(Y_i)=\sum^n_ia_i\mu_i(\leftarrow \textit{Por teorema 5.7})
+		\end{array}
+		\]
+		\item 
+		\[
+		\begin{array}{rl}
+			Var(U_1)=& E((U_1-E(U_1))^2)(\leftarrow Por def. de varianza)\\ \\
+			=& E(\left[\sum^n_ia_iY_i-\sum^n_ia_i\mu_i\right]^2)=E(\left[\sum^n_ia_i(Y_i-\mu_i)\right]^2)\\ \\
+			=& E(\sum^n_i\sum^m_j a_i(y_i-\mu_i)a_j(Y_j-\mu_j))\\ \\
+			=& E(\sum^n_ia_i^2(Y_i-\mu_i)^2+\underbrace{\sum^n_i\sum^m_j}_{i\neq j}a_ia_j(Y_i-\mu_i)(Y_j-\mu_j))\\ \\
+			=& \sum^n_ia_i^2 E((Y_i-\mu_i)^2)+\sum^n_i\sum^m_ja_ia_j E((Y_i-\mu_i)(Y_j-\mu_j))\\ \\
+			=&\sum^n_ia_i^2 Var()Y_i)+\sum^n_i\sum^m_j a_ia_j Cov(Y_i,Y_j)\\ \\
+			=& \sum^n_ia_i^2 Var()Y_i)+ 2\sum_{1\leq i\leq j\leq n}a_ia_j Cov(Y_i,Y_j)
+		\end{array}
+		\]
+		\item 
+		\[
+		\begin{array}{rl}
+			&\\
+			&
 		\end{array}
 		\]
 	\end{enumerate}
