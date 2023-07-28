@@ -349,7 +349,7 @@ Encontrar $E(y_1,y_2)=E(y_1)\cdot E(y_2)$ si $Y_1$ y $Y_2$ son independientes.
 \end{proof}
 \textbf{\textcolor{red}{5.25 Ej.}}
 
-Sean $Y_1,Y_2,Y_3$ cariables aleatorias, donde $E(Y_1)=1,E(Y_2)=2,E(Y_3)=-1,Var(Y_1)=1,Var(Y_2)=3,Var(Y_3)=5,Cov(Y_1,Y_2)=-0.4,Cov(Y_1,Y_3)=\frac{1}{2}\ y \ Cov(Y_1,Y_2)=2$. Encontrar $E(U)$ y $Var(U)$ donde $U=Y_1-2Y_2+Y_3$.
+Sean $Y_1,Y_2,Y_3$ cariables aleatorias, donde $E(Y_1)=1,E(Y_2)=2,E(Y_3)=-1, Var(Y_1)=1,Var(Y_2)=3,Var(Y_3)=5, Cov(Y_1,Y_2)=-0.4,Cov(Y_1,Y_3)=\frac{1}{2}\ y \ Cov(Y_2,Y_3)=2$. Encontrar $E(U)$ y $Var(U)$ donde $U=Y_1-2Y_2+Y_3$.
 
 Si $w=3Y_1+Y_2$, encontrar $Cov(U,W)$
 
@@ -370,6 +370,28 @@ Si $w=3Y_1+Y_2$, encontrar $Cov(U,W)$
 \end{array}
 \]
 \par\noindent\rule{\textwidth}{0.5pt}
+\[
+\begin{array}{rl}
+	Cov(U,W)=& Var(Y_1-2Y_2+Y_3,3Y_1+Y_2)\\ \\
+	=& 3Cov(Y_1,Y_1)+Cov(Y_1,Y_2)-6Cov(Y_2,Y_3)-2 Cov(Y_2,Y_2)+3Cov(Y_3,Y_1)+Cov(Y_3,Y_2)\\ \\
+	=& 3Var(Y_1)-0.4-6(-0.4)-2(Var(Y_2))+3(\frac{1}{2})+2\\ \\
+	=& 3-0.4-6(-0.4)-2(3)+3(\frac{1}{2})+2=2.5
+\end{array}
+\]
+\textbf{Nota: } Si U y W son variables aleatorias independientes
+\[\Rightarrow Cov(U,W)=0\]
+Adem'as, $Var(U+W)=Var(U)+Var(W)$
+
+\textbf{\textcolor{red}{6.3} M'etodo de las funciones de distribuci'on}
+ 
+\textbf{Nota: } Si Y tiene una funci'on densidad de probabilidad $f(y)$ y si U es alguna funci'on de Y, entonces 
+\[F_U(w)=P([U\leq u])=\underset{\begin{tiny}
+R=[(y_1,...,y_n)|U(y_1,...,y_n)\leq u]
+\end{tiny}}{\int\int...\int} f(y_1,y_2,...,y_n)dy_1...dy_n\]
+\[\Rightarrow f_U(u)=\frac{d}{du}F_U(u)\]
+
+\textbf{\textcolor{red}{6.1 Ej.}}
+
 
 
 \end{document}
