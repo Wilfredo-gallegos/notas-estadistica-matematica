@@ -325,24 +325,52 @@ Encontrar $E(y_1,y_2)=E(y_1)\cdot E(y_2)$ si $Y_1$ y $Y_2$ son independientes.
 		\item 
 		\[
 		\begin{array}{rl}
-			Var(U_1)=& E((U_1-E(U_1))^2)(\leftarrow Por def. de varianza)\\ \\
+			Var(U_1)=& E((U_1-E(U_1))^2)(\leftarrow \textit{Por def. de varianza})\\ \\
 			=& E(\left[\sum^n_ia_iY_i-\sum^n_ia_i\mu_i\right]^2)=E(\left[\sum^n_ia_i(Y_i-\mu_i)\right]^2)\\ \\
 			=& E(\sum^n_i\sum^m_j a_i(y_i-\mu_i)a_j(Y_j-\mu_j))\\ \\
 			=& E(\sum^n_ia_i^2(Y_i-\mu_i)^2+\underbrace{\sum^n_i\sum^m_j}_{i\neq j}a_ia_j(Y_i-\mu_i)(Y_j-\mu_j))\\ \\
 			=& \sum^n_ia_i^2 E((Y_i-\mu_i)^2)+\sum^n_i\sum^m_ja_ia_j E((Y_i-\mu_i)(Y_j-\mu_j))\\ \\
 			=&\sum^n_ia_i^2 Var()Y_i)+\sum^n_i\sum^m_j a_ia_j Cov(Y_i,Y_j)\\ \\
-			=& \sum^n_ia_i^2 Var()Y_i)+ 2\sum_{1\leq i\leq j\leq n}a_ia_j Cov(Y_i,Y_j)
+			=& \sum^n_ia_i^2 Var(Y_i)+ 2\sum_{1\leq i\leq j\leq n}a_ia_j Cov(Y_i,Y_j)
 		\end{array}
 		\]
 		\item 
 		\[
 		\begin{array}{rl}
-			&\\
-			&
+			Cov(U_1,_2)=& E((U_1-E(u_1)))(U_2-E(U_2)))\\ \\
+			=& E((\sum^n_ia_iY-i-\sum^n_ia_i\mu_i)(\sum^m_jb_jX_j-\sum^m_jb_j\xi_j))\\ \\
+			=& E((\sum^n_i(Y_i-\mu_i)a_i)(\sum^m_jb_j(X_j-\xi_j)))\\ \\
+			=& E(\sum^n_i\sum^m_ja_ib_j(Y_i-\mu_i)(X_j-\xi_j))\\ \\
+			=&\sum^n_i\sum^m_j a_ib_j E((Y_i-\mu_i)(x_j\xi_j))\\ \\
+			=& \sum^n_i\sum^m_j a_ib_j Cov(Y_i,X_j)
 		\end{array}
 		\]
 	\end{enumerate}
 \end{proof}
+\textbf{\textcolor{red}{5.25 Ej.}}
+
+Sean $Y_1,Y_2,Y_3$ cariables aleatorias, donde $E(Y_1)=1,E(Y_2)=2,E(Y_3)=-1,Var(Y_1)=1,Var(Y_2)=3,Var(Y_3)=5,Cov(Y_1,Y_2)=-0.4,Cov(Y_1,Y_3)=\frac{1}{2}\ y \ Cov(Y_1,Y_2)=2$. Encontrar $E(U)$ y $Var(U)$ donde $U=Y_1-2Y_2+Y_3$.
+
+Si $w=3Y_1+Y_2$, encontrar $Cov(U,W)$
+
+\textbf{Sol.}
+
+\[
+\begin{array}{rl}
+	E(U)=&E(Y_1-2Y_2+Y_3)=E(Y_1)-2E(Y_2)+E(Y_3)\\ \\
+	=& 1-2(2)+(-1)=-4
+\end{array}
+\]
+\par\noindent\rule{\textwidth}{0.5pt}
+\[
+\begin{array}{rl}
+	Var(U)= & Var(Y_1-2Y_2+Y_3)\\ \\
+	=&Var(Y_1)+4Var(Y_2)+Var(Y_3)+2[-2Cov(Y_1,Y_2)+Cov(Y_1,Y_3)-2Cov(Y_2,Y_3)]\\ \\
+	=& 1+4(3)+5+2[-2(-0.4)+\frac{1}{2}-2(2)]=9.4 
+\end{array}
+\]
+\par\noindent\rule{\textwidth}{0.5pt}
+
 
 \end{document}
 

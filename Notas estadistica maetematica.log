@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.15)  27 JUL 2023 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.15)  27 JUL 2023 20:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -924,7 +924,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 272--272
 []\OT1/cmr/m/n/10 densidad
  []
 
-[5 <../imagenes/imagen 3.jpeg>] [6] [7] (Notas estadistica maetematica.aux
+[5 <../imagenes/imagen 3.jpeg>] [6] [7] [8] (Notas estadistica maetematica.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -933,10 +933,10 @@ Package rerunfilecheck Info: File `"Notas estadistica maetematica".out' has not
 (rerunfilecheck)             Checksum: A1296346E9DD7E420C35968EF460E5F5;88.
  ) 
 Here is how much of TeX's memory you used:
- 23088 strings out of 476331
- 432088 string characters out of 5783953
+ 23089 strings out of 476331
+ 432086 string characters out of 5783953
  1869660 words of memory out of 5000000
- 43108 multiletter control sequences out of 15000+600000
+ 43107 multiletter control sequences out of 15000+600000
  523489 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,104p,435b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -957,9 +957,9 @@ msfonts/cm/cmsy10.pfb><C:/Users/ThinkPad T470/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ThinkPad T470/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/ThinkPad T470/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Notas estadistica maetematica.pdf" (7 pages, 430483 bytes).
+Output written on "Notas estadistica maetematica.pdf" (8 pages, 433660 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
