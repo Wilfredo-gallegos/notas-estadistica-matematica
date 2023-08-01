@@ -403,9 +403,21 @@ R=[(y_1,...,y_n)|U(y_1,...,y_n)\leq u]
 \end{array}\right.\]
 \[U=3Y-1\ \textit{(utilidad diaria, en cientos de \$)}\]
 Encontrar la densidad de probabilidad de U
-
 \textbf{Sol.}
-
+\[
+\begin{array}{rl}
+	F_U(u)=&P(U\leq u) =P(3Y-1\leq u)=P(Y\leq \frac{u+1}{3})\\ 
+\end{array}
+\]
+\[0\leq \frac{u+1}{3}\leq 1\Rightarrow -1\leq u\leq 2\]
+\[
+\begin{array}{rl}
+	\textit{Si } u<-1\Rightarrow \frac{u+1}{3}<0\Rightarrow & F_U(u)=P(Y\leq \frac{u+1}{3}<0)=0\\ \\
+	Si u>2\Rightarrow \frac{u+1}{3}>1\Rightarrow &F_U(u)=P(Y\leq \frac{u+1}{3}<1)=1\\ \\
+	\textit{Si }-1<u<2\Rightarrow & P(Y\leq \frac{u+1}{3})=\int\limits^{\frac{u+1}{3}}_{-\infty}f(y)dy\\ \\
+	=& \int\limits^{\frac{u+1}{3}}_02ydy=
+\end{array}
+\]
 
 
 
